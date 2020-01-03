@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/vue.js"></script>
+<body>
+<div id="app">
+    <ul>
+        <li @click="item in language">{{item}}</li>
+    </ul>
+</div>
+</body>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            language: [
+                "java", "php", "c++"
+            ]
+        }
+    })
+</script>
+</html>
