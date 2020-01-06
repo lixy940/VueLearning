@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .active{
+    color:red;
+  }
+  .line{
+    font-weight: bold;
+  }
+</style>
+<body>
+<div id="app">
+
+  <label :class="{active:isActive,line:isLine}">{{message}}</label><br>
+  <label :class="getClass()">{{message}}</label>
+  <button v-on:click="btnClick()">点击</button>
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "你好啊",
+      isActive:true,
+      isLine:true
+    },
+    methods: {
+
+      btnClick:function () {
+        this.isActive = !this.isActive;
+        this.isLine = !this.isLine;
+      },
+      getClass:function(){
+        return {active:this.isActive,line:this.isLine};
+      },
+      otherMethod:function () {
+        console.log("otherMethod执行");
+      }
+
+    }
+  })
+</script>
+</body>
+</html>

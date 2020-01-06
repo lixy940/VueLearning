@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <img v-bind:src="imgUrl" alt="">
+  <a v-bind:href="aUrl">百度一下</a>
+  <br>
+  <img :src="imgUrl" alt="">
+  <a :href="aUrl">百度一下</a>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      imgUrl:"http://demo.zyshare.cn/xiaofeng_logo.jpg",
+      aUrl:"http://baidu.com"
+    }
+  })
+</script>
+
+</body>
+</html>
